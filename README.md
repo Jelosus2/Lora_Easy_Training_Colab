@@ -11,6 +11,7 @@ You can check the [guide I made on CivitAI]() (TODO: Add link once redacted)
 ## Table of content
 
 - [Additions of the Forked version](#additions-of-the-forked-version)
+- [How to obtain the Ngrok token](#how-to-obtain-the-ngrok-token)
 - [How to install the UI](#how-to-install-the-ui)
   - [Windows](#windows)
   - [Linux](#linux)
@@ -27,6 +28,12 @@ The list of addition features:
   - CAME
 - Schedulers:
   - REX 
+
+## How to obtain the Ngrok token
+
+The colab uses `cloudflared` quick tunnels as the default method but if it goes down you can use the other method to create a tunnel which is ngrok. The only difference with cloudflared is that you will need a token to create the tunnel. You can get it in the [Ngrok's dashboard](https://dashboard.ngrok.com/), in the "Your AuthToken" tab.
+
+![How to get Ngrok's AuthToken](./assets/ngrok_token.png)
 
 ## How to install the UI
 
