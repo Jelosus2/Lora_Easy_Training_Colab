@@ -14,7 +14,9 @@ You can check the [guide I made on CivitAI]() (TODO: Add link once redacted)
 - [How to install the UI](#how-to-install-the-ui)
   - [Windows](#windows)
   - [Linux](#linux)
-- [How to get the link for custom model/VAE]()
+- [How to get the link for custom model/VAE](#how-to-get-the-link-for-custom-modelvae)
+  - [Civitai](#from-civitai)
+  - [HuggingFace](#from-huggingface)
 
 ## Additions of the Forked version
 
@@ -100,3 +102,33 @@ and then you can run the UI with
 ```
 ./run.sh
 ```
+
+## How to get the link for custom model/VAE
+
+### From Civitai
+
+#### Method 1
+
+This method works for models/VAEs with 2 or more versions and if the version has only 1 file attached to it. Go to the page of the model/VAE you want to obtain the URL, if you see `?modelVersionId=XXXXXX` you can just copy it and paste it in the colab. If you don't then switch to another version and then switch back to the version you want to download.
+
+![How to get link from civitai 1st method](./assets/model_url_civitai_1.png)
+
+#### Method 2
+
+If the model/VAE only has only one version or the same version has 2+ files attached to it and what you can do is going to the page of the model/VAE, scroll down and display the files, right click on the "Download" button and copy the link address.
+
+![How to get link from civitai 2nd method](./assets/model_url_civitai_2.png)
+
+### From HuggingFace
+
+#### Mehod 1
+
+Go inside the model/VAE you want to download and copy the URL.
+
+![How to get link from hf 1st method](./assets/model_url_hf_1.png)
+
+#### Method 2
+
+Go to the directory where the model/VAE is located, right click on the download icon and copy the link address.
+
+![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
