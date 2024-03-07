@@ -2,7 +2,7 @@
 
 A colab powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derrian-distro/LoRA_Easy_Training_scripts_Backend) created by [Derrian Distro](https://github.com/derrian-distro)
 
-### The Forked version of the trainer is not maintained by Derrian, please do not open issues there if you encounter any problem. Instead submit them in the [forked repo](https://github.com/Jelosus2/LoRA_Easy_Training_scripts_Backend/).
+### DISCLAIMER: The Forked version of the trainer is not maintained by Derrian, please do not open issues there if you encounter any problem. Instead submit them in the [forked repo](https://github.com/Jelosus2/LoRA_Easy_Training_scripts_Backend/).
 
 ## Guide
 
@@ -41,7 +41,7 @@ The colab uses `cloudflared` quick tunnels as the default method but if it goes 
 
 Prerequisites:
 - Download and install [Git](https://git-scm.com/downloads)
-- Download and install [Python 3.10.9](https://www.python.org/downloads/release/python-3109/#:~:text=Full%20Changelog-,Files,-Version)
+- Download and install [Python 3.10.9](https://www.python.org/downloads/release/python-3109/#:~:text=Full%20Changelog-,Files,-Version) or [Python 3.11](https://www.python.org/downloads/release/python-3110/#:~:text=Full%20Changelog-,Files,-Version)
 
 #### Original
 
@@ -70,7 +70,7 @@ To run the UI use the `run.bat`
 
 Prerequisites:
 - Install Git with `sudo apt install git`
-- Install Python 3.10 venv with `sudo apt install python3.10-venv`
+- Install Python 3.10 venv (`sudo apt install python3.10-venv`) or Python 3.11 venv (`sudo apt install python3.11-venv`)
 
 #### Original
 
@@ -78,7 +78,12 @@ Open a terminal and run the following commands in order
 ```
 git clone -b dev https://github.com/derrian-distro/LoRA_Easy_Training_Scripts
 cd LoRA_Easy_Training_Scripts
+
+# Python 3.10
 python3.10 ./install.py
+
+# Python 3.11
+python3.11 ./install.py
 ```
 
 When you run the installer answer the question "Are you using this locally?" with **n**
@@ -98,7 +103,12 @@ Open a terminal and run the following commands in order
 ```
 git clone https://github.com/Jelosus2/LoRA_Easy_Training_Colab_Frontend
 cd LoRA_Easy_Training_Colab_Frontend
+
+# Python 3.10
 python3.10 ./install.py
+
+# Python 3.11
+python3.11 ./install.py
 ```
 
 To run the UI first you have to give permissions to the `run.sh` file, here is an example:
