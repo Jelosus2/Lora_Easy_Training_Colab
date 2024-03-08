@@ -6,7 +6,7 @@ A colab powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derri
 
 ## Guide
 
-You can check the [guide I made on CivitAI]() (TODO: Add link once redacted)
+You can check the [guide I made on CivitAI](https://civitai.com/articles/4409)
 
 ## Table of content
 
