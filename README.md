@@ -1,6 +1,6 @@
 # Lora_Easy_Training_Colab
 
-A colab powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derrian-distro/LoRA_Easy_Training_scripts_Backend) created by [Derrian Distro](https://github.com/derrian-distro)
+A [colab](https://colab.research.google.com/github/Jelosus2/Lora_Easy_Training_Colab/blob/main/Lora_Easy_Training_Colab.ipynb) powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derrian-distro/LoRA_Easy_Training_scripts_Backend) created by [Derrian Distro](https://github.com/derrian-distro)
 
 ### DISCLAIMER: The Forked version of the trainer is not maintained by Derrian, please do not open issues there if you encounter any problem. Instead submit them in the [forked repo](https://github.com/Jelosus2/LoRA_Easy_Training_scripts_Backend/).
 
@@ -18,16 +18,14 @@ You can check the [guide I made on CivitAI](https://civitai.com/articles/4409)
 - [How to get the link for custom model/VAE](#how-to-get-the-link-for-custom-modelvae)
   - [Civitai](#from-civitai)
   - [HuggingFace](#from-huggingface)
+- [Changelog](#changelog)
 
 ## Additions of the Forked version
 
 The forked trainer is a modified unofficial version that adds additional features.
 
-The list of addition features:
-- Optimizers:
-  - CAME
-- Schedulers:
-  - REX 
+The list of additional features:
+*Nothing at the moment* 
 
 ## How to obtain the Ngrok token
 
@@ -149,3 +147,8 @@ Go inside the model/VAE you want to download and copy the URL.
 Go to the directory where the model/VAE is located, right click on the download icon and copy the link address.
 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
+
+## Changelog
+- March 10, 2024:
+  - Modified the way Forked trainer is installed due to CAME and REX being officially implemented. You have to update the UI (both original or forked) if you want to use any of those, just open a command line in the root folder of the UI and run `git pull`
+  - Added the newly released v3 taggers and modified the script to make them work.
