@@ -172,7 +172,7 @@ def main(args):
 
         if args.onnx:
             if len(imgs) < args.batch_size:
-                imgs = np.concatenate([imgs, np.zeros((args.batch_size - len(imgs), IMAGE_SIZE, IMAGE_SIZE, 3))], axis=0)
+                imgs = np.concatenate([imgs, np.zeros((args.batch_size - len(imgs), IMAGE_SIZE, IMAGE_SIZE, 3))], axis=0).astype(np.float32)
             probs = ort_sess.run(None, {input_name: imgs})[0]  # onnx output numpy
             probs = probs[: len(path_imgs)]
         else:
