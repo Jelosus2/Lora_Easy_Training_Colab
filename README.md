@@ -29,7 +29,7 @@ The list of additional features:
 
 ## How to obtain the Ngrok token
 
-The colab uses `cloudflared` quick tunnels as the default method but if it goes down you can use the other method to create a tunnel which is ngrok. The only difference with cloudflared is that you will need a token to create the tunnel. You can get it in the [Ngrok's dashboard](https://dashboard.ngrok.com/), in the "Your AuthToken" tab.
+The colab uses `cloudflared` quick tunnels as the default method but if it goes down or there's any issue with it you can use the other method to create a tunnel which is ngrok. The only difference with cloudflared is that you will need a token to create the tunnel. You can get it in the [Ngrok's dashboard](https://dashboard.ngrok.com/), in the "Your AuthToken" tab.
 
 ![How to get Ngrok's AuthToken](./assets/ngrok_token.png)
 
@@ -49,7 +49,8 @@ git clone -b dev https://github.com/derrian-distro/LoRA_Easy_Training_Scripts
 cd LoRA_Easy_Training_Scripts
 install.bat
 ```
-When you run `install.bat` answer the question "Are you using this locally?" with **n**
+Old: When you run `install.bat` answer the question "Are you using this locally?" with **n**.<br>
+New: When you run `install.bat` answer the question "Are you using colab?" with **y**.
 
 To run the UI use the `run.bat`
 
@@ -84,7 +85,8 @@ python3.10 ./install.py
 python3.11 ./install.py
 ```
 
-When you run the installer answer the question "Are you using this locally?" with **n**
+Old: When you run the installer answer the question "Are you using this locally?" with **n**.<br>
+New: When you run the installer answer the question "Are you using colab?" with **y**.
 
 To run the UI first you have to give permissions to the `run.sh` file, here is an example:
 ```
@@ -152,3 +154,6 @@ Go to the directory where the model/VAE is located, right click on the download 
 - March 10, 2024:
   - Modified the way Forked trainer is installed due to CAME and REX being officially implemented. You have to update the UI (both original or forked) if you want to use any of those, just open a command line in the root folder of the UI and run `git pull`
   - Added the newly released v3 taggers and modified the script to make them work.
+- March 29, 2024:
+  - Fixed the trainer. You have to update the UI (both original or forked).
+  - Added a field that allows you to input a token either from HuggingFace or Civitai to download gated models/VAEs and private datasets.
