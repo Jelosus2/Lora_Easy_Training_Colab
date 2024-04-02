@@ -157,3 +157,5 @@ Go to the directory where the model/VAE is located, right click on the download 
 - March 29, 2024:
   - Fixed the trainer. You have to update the UI (both original or forked).
   - Added a field that allows you to input a token either from HuggingFace or Civitai to download gated models/VAEs and private datasets.
+- April 2, 2024:
+  - Updated Animagine from 3.0 to 3.1 in the default models available to download.
