@@ -151,11 +151,14 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
-- March 10, 2024:
-  - Modified the way Forked trainer is installed due to CAME and REX being officially implemented. You have to update the UI (both original or forked) if you want to use any of those, just open a command line in the root folder of the UI and run `git pull`
-  - Added the newly released v3 taggers and modified the script to make them work.
+- April 4, 2024:
+  - Simplify the fix for the sd scripts logging issue.
+  - Improved the dependency installation for the captioning cell (Ignore tensorboard error).
+- April 2, 2024:
+  - Updated Animagine from 3.0 to 3.1 in the default models available to download.
 - March 29, 2024:
   - Fixed the trainer. You have to update the UI (both original or forked).
   - Added a field that allows you to input a token either from HuggingFace or Civitai to download gated models/VAEs and private datasets.
-- April 2, 2024:
-  - Updated Animagine from 3.0 to 3.1 in the default models available to download.
+- March 10, 2024:
+  - Modified the way Forked trainer is installed due to CAME and REX being officially implemented. You have to update the UI (both original or forked) if you want to use any of those, just open a command line in the root folder of the UI and run `git pull`
+  - Added the newly released v3 taggers and modified the script to make them work.
