@@ -17,9 +17,8 @@ IMAGE_SIZE = 448
 
 # wd-v1-4-swinv2-tagger-v2 / wd-v1-4-vit-tagger / wd-v1-4-vit-tagger-v2/ wd-v1-4-convnext-tagger / wd-v1-4-convnext-tagger-v2
 DEFAULT_WD14_TAGGER_REPO = "SmilingWolf/wd-v1-4-convnext-tagger-v2"
-FILES = ["selected_tags.csv"]
+FILES = ["model.onnx", "selected_tags.csv"]
 FILES_PB = ["keras_metadata.pb", "saved_model.pb"]
-FILES_ONNX = ["model.onnx"]
 SUB_DIR = "variables"
 SUB_DIR_FILES = ["variables.data-00000-of-00001", "variables.index"]
 CSV_FILE = FILES[-1]
@@ -82,9 +81,8 @@ def main(args):
     if not os.path.exists(args.model_dir) or args.force_download:
         print(f"downloading wd14 tagger model from hf_hub. id: {args.repo_id}")
         files = FILES
-        if args.onnx:
-            files += FILES_ONNX
-        else:
+
+        if not "v3" in args.repo_id:
             files += FILES_PB
             for file in SUB_DIR_FILES:
                 hf_hub_download(
@@ -102,7 +100,6 @@ def main(args):
 
     # 画像を読み込む
     if args.onnx:
-        import onnx
         import onnxruntime as ort
 
         onnx_path = f"{args.model_dir}/model.onnx"
@@ -115,21 +112,7 @@ def main(args):
                 + " / onnxモデルが見つかりませんでした。--force_downloadで再ダウンロードしてください"
             )
 
-        model = onnx.load(onnx_path)
-        input_name = model.graph.input[0].name
-        try:
-            batch_size = model.graph.input[0].type.tensor_type.shape.dim[0].dim_value
-        except:
-            batch_size = model.graph.input[0].type.tensor_type.shape.dim[0].dim_param
-
-        if batch_size != 0 and args.batch_size != batch_size and type(batch_size) != str:
-            # some rebatch model may use 'N' as dynamic axes
-            print(
-                f"Batch size {args.batch_size} doesn't match onnx model batch size {batch_size}, use model batch size {batch_size}"
-            )
-            args.batch_size = batch_size
-
-        del model
+        input_name = "input" if "v3" in args.repo_id else "input_1:0"
 
         ort_sess = ort.InferenceSession(
             onnx_path,

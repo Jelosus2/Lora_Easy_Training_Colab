@@ -151,6 +151,11 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- April 9, 2024:
+  - Fixed the tagging cell for v2 taggers.
+  - Added more options to the tagging cell.
+  - Added a LoRA resizer cell under the Utils section.
+  - Reworked some of the code and stopped using `os` library for path and file managemenet. Using `pathlib` instead.
 - April 4, 2024:
   - Simplify the fix for the sd scripts logging issue.
   - Improved the dependency installation for the captioning cell (Ignore tensorboard error).
