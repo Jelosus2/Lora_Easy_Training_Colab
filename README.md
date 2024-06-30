@@ -1,6 +1,6 @@
 # Lora_Easy_Training_Colab
 
-A [colab](https://colab.research.google.com/github/Jelosus2/Lora_Easy_Training_Colab/blob/main/Lora_Easy_Training_Colab.ipynb) powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derrian-distro/LoRA_Easy_Training_scripts_Backend) created by [Derrian Distro](https://github.com/derrian-distro)
+> A [colab](https://colab.research.google.com/github/Jelosus2/Lora_Easy_Training_Colab/blob/main/Lora_Easy_Training_Colab.ipynb) powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derrian-distro/LoRA_Easy_Training_scripts_Backend) created by [Derrian Distro](https://github.com/derrian-distro)
 
 ### DISCLAIMER: The Forked version of the trainer is not maintained by Derrian, please do not open issues there if you encounter any problem. Instead submit them in the [forked repo](https://github.com/Jelosus2/LoRA_Easy_Training_scripts_Backend/).
 
@@ -151,6 +151,11 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- June 30, 2024:
+  - Fixed wd taggers and BLIP captioning + now all taggers run on onnx run time. Keras run time has been removed since it's actually much slower.
+  - Now you can use paths to specify where you want to setup the LoRA folder instead of just a name on the root of drive/google colab.
+  - Added the ability to give different file names for downloaded models and VAEs. Additionally, now you can save them on your own google drive.
+  - Fixed a bunch of bugs and errors.
 - April 9, 2024:
   - Fixed the tagging cell for v2 taggers.
   - Added more options to the tagging cell.

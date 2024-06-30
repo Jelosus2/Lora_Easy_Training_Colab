@@ -18,11 +18,7 @@ IMAGE_SIZE = 448
 # wd-v1-4-swinv2-tagger-v2 / wd-v1-4-vit-tagger / wd-v1-4-vit-tagger-v2/ wd-v1-4-convnext-tagger / wd-v1-4-convnext-tagger-v2
 DEFAULT_WD14_TAGGER_REPO = "SmilingWolf/wd-v1-4-convnext-tagger-v2"
 FILES = ["model.onnx", "selected_tags.csv"]
-FILES_PB = ["keras_metadata.pb", "saved_model.pb"]
-SUB_DIR = "variables"
-SUB_DIR_FILES = ["variables.data-00000-of-00001", "variables.index"]
 CSV_FILE = FILES[-1]
-
 
 def preprocess_image(image):
     image = np.array(image)
@@ -82,17 +78,6 @@ def main(args):
         print(f"downloading wd14 tagger model from hf_hub. id: {args.repo_id}")
         files = FILES
 
-        if not "v3" in args.repo_id:
-            files += FILES_PB
-            for file in SUB_DIR_FILES:
-                hf_hub_download(
-                    args.repo_id,
-                    file,
-                    subfolder=SUB_DIR,
-                    cache_dir=os.path.join(args.model_dir, SUB_DIR),
-                    force_download=True,
-                    force_filename=file,
-                )
         for file in files:
             hf_hub_download(args.repo_id, file, cache_dir=args.model_dir, force_download=True, force_filename=file)
     else:
@@ -112,7 +97,7 @@ def main(args):
                 + " / onnxモデルが見つかりませんでした。--force_downloadで再ダウンロードしてください"
             )
 
-        input_name = "input" if "v3" in args.repo_id else "input_1:0"
+        input_name = "input" if "v3" in args.repo_id or "swinv2" in args.repo_id else "input_1:0"
 
         ort_sess = ort.InferenceSession(
             onnx_path,
