@@ -151,6 +151,8 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- July 29, 2024:
+  - Added the new [wd-vit-large-tagger-v3](https://huggingface.co/SmilingWolf/wd-vit-large-tagger-v3) and [wd-eva02-large-tagger-v3](https://huggingface.co/SmilingWolf/wd-eva02-large-tagger-v3) taggers.
 - June 30, 2024:
   - Fixed wd taggers and BLIP captioning + now all taggers run on onnx run time. Keras run time has been removed since it's actually much slower.
   - Now you can use paths to specify where you want to setup the LoRA folder instead of just a name on the root of drive/google colab.
