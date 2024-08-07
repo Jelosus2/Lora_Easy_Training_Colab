@@ -2,15 +2,12 @@
 
 > A [colab](https://colab.research.google.com/github/Jelosus2/Lora_Easy_Training_Colab/blob/main/Lora_Easy_Training_Colab.ipynb) powered by [Lora_Easy_Training_Scripts_Backend](https://github.com/derrian-distro/LoRA_Easy_Training_scripts_Backend) created by [Derrian Distro](https://github.com/derrian-distro)
 
-### DISCLAIMER: The Forked version of the trainer is not maintained by Derrian, please do not open issues there if you encounter any problem. Instead submit them in the [forked repo](https://github.com/Jelosus2/LoRA_Easy_Training_scripts_Backend/).
-
 ## Guide
 
 You can check the [guide I made on CivitAI](https://civitai.com/articles/4409)
 
 ## Table of content
 
-- [Additions of the Forked version](#additions-of-the-forked-version)
 - [How to obtain the Ngrok token](#how-to-obtain-the-ngrok-token)
 - [How to install the UI](#how-to-install-the-ui)
   - [Windows](#windows)
@@ -19,13 +16,6 @@ You can check the [guide I made on CivitAI](https://civitai.com/articles/4409)
   - [Civitai](#from-civitai)
   - [HuggingFace](#from-huggingface)
 - [Changelog](#changelog)
-
-## Additions of the Forked version
-
-The forked trainer is a modified unofficial version that adds additional features.
-
-The list of additional features:
-*Nothing at the moment* 
 
 ## How to obtain the Ngrok token
 
@@ -41,27 +31,14 @@ Prerequisites:
 - Download and install [Git](https://git-scm.com/downloads)
 - Download and install [Python 3.10.9](https://www.python.org/downloads/release/python-3109/#:~:text=Full%20Changelog-,Files,-Version) or [Python 3.11](https://www.python.org/downloads/release/python-3110/#:~:text=Full%20Changelog-,Files,-Version)
 
-#### Original
-
 Open a command line or PowerShell and run this commands in order
 ```
 git clone -b dev https://github.com/derrian-distro/LoRA_Easy_Training_Scripts
 cd LoRA_Easy_Training_Scripts
 install.bat
 ```
-Old: When you run `install.bat` answer the question "Are you using this locally?" with **n**.<br>
-New: When you run `install.bat` answer the question "Are you using colab?" with **y**.
-
-To run the UI use the `run.bat`
-
-#### Forked
-
-Open a command line or PowerShell and run this commands in order
-```
-git clone https://github.com/Jelosus2/LoRA_Easy_Training_Colab_Frontend
-cd LoRA_Easy_Training_Colab_Frontend
-install.bat
-```
+New: When you run `install.bat` answer the question "Are you using this locally?" with **n**.<br>
+Old: When you run `install.bat` answer the question "Are you using colab?" with **y**.
 
 To run the UI use the `run.bat`
 
@@ -71,8 +48,6 @@ Prerequisites:
 - Install Git with `sudo apt install git`
 - Install Python 3.10 venv (`sudo apt install python3.10-venv`) or Python 3.11 venv (`sudo apt install python3.11-venv`)
 
-#### Original
-
 Open a terminal and run the following commands in order
 ```
 git clone -b dev https://github.com/derrian-distro/LoRA_Easy_Training_Scripts
@@ -85,31 +60,8 @@ python3.10 ./install.py
 python3.11 ./install.py
 ```
 
-Old: When you run the installer answer the question "Are you using this locally?" with **n**.<br>
+New: When you run the installer answer the question "Are you using this locally?" with **n**.<br>
 New: When you run the installer answer the question "Are you using colab?" with **y**.
-
-To run the UI first you have to give permissions to the `run.sh` file, here is an example:
-```
-sudo chmod 755 ./run.sh
-```
-and then you can run the UI with
-```
-./run.sh
-```
-
-#### Forked
-
-Open a terminal and run the following commands in order
-```
-git clone https://github.com/Jelosus2/LoRA_Easy_Training_Colab_Frontend
-cd LoRA_Easy_Training_Colab_Frontend
-
-# Python 3.10
-python3.10 ./install.py
-
-# Python 3.11
-python3.11 ./install.py
-```
 
 To run the UI first you have to give permissions to the `run.sh` file, here is an example:
 ```
@@ -151,6 +103,8 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- August 7, 2024:
+  - Removed support for Forked trainer version as it's likely that won't get any update. 
 - July 29, 2024:
   - Added the new [wd-vit-large-tagger-v3](https://huggingface.co/SmilingWolf/wd-vit-large-tagger-v3) and [wd-eva02-large-tagger-v3](https://huggingface.co/SmilingWolf/wd-eva02-large-tagger-v3) taggers.
 - June 30, 2024:
