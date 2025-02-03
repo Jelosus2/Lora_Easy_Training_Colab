@@ -103,6 +103,9 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- February 3rd, 2025:
+  - Fixed slow tagging.
+  - Fixed path issues when setting up directories.
 - November 16th, 2024:
   - Added emojis to make sections separation easy to the eyes.
   - Added Illustrious v0.1 and NoobAI 1.0 (Epsilon) to the list of default checkpoints available to download.
