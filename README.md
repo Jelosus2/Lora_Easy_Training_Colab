@@ -103,6 +103,8 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- December 8th, 2025:
+  - Added support for Machina's fork and my fork.
 - February 3rd, 2025:
   - Fixed slow tagging.
   - Fixed path issues when setting up directories.
