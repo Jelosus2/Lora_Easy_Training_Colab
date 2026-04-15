@@ -103,6 +103,8 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- April 15th, 2026:
+  - Fixed tagger.
 - April 11th, 2026:
   - Added support to specify URL and file name when downloading text encoders.
   - Added Anima Preview 3.
