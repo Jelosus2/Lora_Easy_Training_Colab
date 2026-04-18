@@ -6,7 +6,7 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
-from huggingface_hub import hf_hub_download
+from huggingface_hub import hf_hub_download, try_to_load_from_cache
 from PIL import Image
 from tqdm import tqdm
 
@@ -87,7 +87,7 @@ def main(args):
     if args.onnx:
         import onnxruntime as ort
 
-        onnx_path = f"{args.model_dir}/model.onnx"
+        onnx_path = try_to_load_from_cache(args.repo_id, FILES[0], cache_dir=args.model_dir)
         print("Running wd14 tagger with onnx")
         print(f"loading onnx model: {onnx_path}")
 
@@ -113,7 +113,8 @@ def main(args):
     # label_names = pd.read_csv("2022_0000_0899_6549/selected_tags.csv")
     # 依存ライブラリを増やしたくないので自力で読むよ
 
-    with open(os.path.join(args.model_dir, CSV_FILE), "r", encoding="utf-8") as f:
+    csv_path = try_to_load_from_cache(args.repo_id, CSV_FILE, cache_dir=args.model_dir)
+    with open(csv_path, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         l = [row for row in reader]
         header = l[0]  # tag_id,name,category,count
@@ -258,8 +259,6 @@ def main(args):
         print("\nTag frequencies:")
         for tag, freq in sorted_tags:
             print(f"{tag}: {freq}")
-
-    print("done!")
 
 
 def setup_parser() -> argparse.ArgumentParser:
