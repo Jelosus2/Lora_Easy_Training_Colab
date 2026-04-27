@@ -88,6 +88,9 @@ def main(args):
         import onnxruntime as ort
 
         onnx_path = try_to_load_from_cache(args.repo_id, FILES[0], cache_dir=args.model_dir)
+        if onnx_path is None:
+            onnx_path = os.path.join(args.model_dir, FILES[0])
+
         print("Running wd14 tagger with onnx")
         print(f"loading onnx model: {onnx_path}")
 
@@ -114,6 +117,9 @@ def main(args):
     # 依存ライブラリを増やしたくないので自力で読むよ
 
     csv_path = try_to_load_from_cache(args.repo_id, CSV_FILE, cache_dir=args.model_dir)
+    if csv_path is None:
+        csv_path = os.path.join(args.model_dir, CSV_FILE)
+
     with open(csv_path, "r", encoding="utf-8") as f:
         reader = csv.reader(f)
         l = [row for row in reader]

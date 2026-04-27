@@ -103,6 +103,8 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- April 27th, 2026:
+  - Fixed wd tagger for older huggingface lib.
 - April 18th, 2026:
   - Fixed wd tagger.
 - April 11th, 2026:
