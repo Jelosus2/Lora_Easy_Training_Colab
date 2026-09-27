@@ -103,6 +103,8 @@ Go to the directory where the model/VAE is located, right click on the download 
 ![How to get link from hf 2nd method](./assets/model_url_hf_2.png)
 
 ## Changelog
+- September 26th, 2026:
+  - Fixed progress logging.
 - May 14th, 2026:
   - Added Anima Base v1.0.
 - April 27th, 2026:
